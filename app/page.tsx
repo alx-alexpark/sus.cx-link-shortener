@@ -306,7 +306,7 @@ export default function Home() {
                     </p>
                     <div className="flex items-center gap-4 mt-2 text-xs text-zinc-500 dark:text-zinc-500">
                       <span>{link.clicks} clicks</span>
-                      <span>Created {new Date(link.createdAt).toLocaleDateString()}</span>
+                      <span>Created {new Date(link.createdAt).toISOString()}</span>
                     </div>
                   </div>
                   <button
