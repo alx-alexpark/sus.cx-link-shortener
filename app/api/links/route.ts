@@ -94,7 +94,7 @@ export async function POST(req: NextRequest) {
     const accountResult = await pool.query(
       `SELECT a.id, a."accountId" 
        FROM account a 
-       WHERE a."userId" = $1 AND a."providerId" = 'hca' 
+       WHERE a."userId" = $1 AND a."providerId" = 'hca-prod' 
        LIMIT 1`,
       [session.user.id]
     );

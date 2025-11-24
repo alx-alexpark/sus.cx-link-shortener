@@ -13,12 +13,12 @@ export const auth = betterAuth({
     genericOAuth({
       config: [
         {
-          providerId: "hca",
+          providerId: "hca-prod",
           clientId: process.env.OAUTH_CLIENT_ID as string,
           clientSecret: process.env.OAUTH_CLIENT_SECRET as string,
-          authorizationUrl: "https://hca.dinosaurbbq.org/oauth/authorize",
-          tokenUrl: "https://hca.dinosaurbbq.org/oauth/token",
-          userInfoUrl: "https://hca.dinosaurbbq.org/api/v1/me",
+          authorizationUrl: "https://identity.hackclub.com/oauth/authorize",
+          tokenUrl: "https://identity.hackclub.com/oauth/token",
+          userInfoUrl: "https://identity.hackclub.com/api/v1/me",
           scopes: ["email", "name", "slack_id"],
           mapProfileToUser: (profile) => {
             return {

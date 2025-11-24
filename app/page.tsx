@@ -116,7 +116,7 @@ export default function Home() {
 
   const handleLogin = async () => {
     await authClient.signIn.social({
-      provider: "hca",
+      provider: "hca-prod",
       callbackURL: "/",
       errorCallbackURL: "/error",
       newUserCallbackURL: "/",
