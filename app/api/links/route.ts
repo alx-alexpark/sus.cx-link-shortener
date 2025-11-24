@@ -104,6 +104,14 @@ export async function POST(req: NextRequest) {
         );
       }
 
+      // Validate custom slug format (only alphanumeric, hyphens, and underscores)
+      if (!/^[a-z0-9_-]+$/i.test(customSlug)) {
+        return NextResponse.json(
+          { error: "Custom slug can only contain letters, numbers, hyphens, and underscores" },
+          { status: 400 }
+        );
+      }
+
       const existing = await pool.query(
         "SELECT id FROM links WHERE short_code = $1",
         [customSlug]
