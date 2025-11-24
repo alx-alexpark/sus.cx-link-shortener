@@ -143,13 +143,13 @@ export default function Home() {
             sus.cx
           </h1>
           <p className="mb-8 text-center text-zinc-600 dark:text-zinc-400">
-            Sign in to continue
+            A link shortener for Hack Clubbers
           </p>
           <button
             onClick={handleLogin}
             className="w-full rounded-lg bg-blue-600 px-4 py-3 font-medium text-white transition-colors hover:bg-blue-700"
           >
-            Sign in with HCA
+            Sign in with Hack Club
           </button>
         </div>
       </div>
@@ -182,14 +182,14 @@ export default function Home() {
                 htmlFor="url"
                 className="block text-sm font-medium text-zinc-900 dark:text-zinc-50 mb-2"
               >
-                Long URL
+                Target URL
               </label>
               <input
                 type="url"
                 id="url"
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
-                placeholder="https://example.com/very/long/url"
+                placeholder="https://example.com/imposter/sussy"
                 required
                 className="w-full px-4 py-3 rounded-lg border border-zinc-300 dark:border-zinc-600 bg-white dark:bg-zinc-700 text-zinc-900 dark:text-zinc-50 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
@@ -214,6 +214,12 @@ export default function Home() {
                 Leave empty for a random short code
               </p>
             </div>
+
+            <div className="mb-6 p-4 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg">
+            <p className="text-sm text-yellow-800 dark:text-yellow-200">
+              Do not link to anything that would get me in legal trouble. All links created are logged and associated with you.
+            </p>
+          </div>
 
             {error && (
               <div className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
