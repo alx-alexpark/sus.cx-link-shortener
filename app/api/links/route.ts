@@ -77,7 +77,15 @@ export async function POST(req: NextRequest) {
 
     // Validate URL
     try {
-      new URL(url);
+      const parsedUrl = new URL(url);
+      
+      // Prevent linking to sus.cx to avoid redirect loops
+      if (parsedUrl.hostname === 'sus.cx' || parsedUrl.hostname === 'www.sus.cx' || parsedUrl.hostname === 'localhost') {
+        return NextResponse.json(
+          { error: "Cannot create short links to sus.cx" },
+          { status: 400 }
+        );
+      }
     } catch {
       return NextResponse.json({ error: "Invalid URL" }, { status: 400 });
     }
